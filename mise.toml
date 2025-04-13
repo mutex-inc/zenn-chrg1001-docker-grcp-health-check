@@ -1,0 +1,37 @@
+[tools]
+node = "22"
+yarn = "4"
+jq = "latest"
+hadolint = "latest"
+cosign = "latest"
+go = "latest"
+"go:github.com/grpc-ecosystem/grpc-health-probe" = "latest"
+"npm:cspell" = "latest"
+
+[env]
+_PROJECT_NAME = "docker-grcp-health-check-example"
+
+[settings]
+experimental = true
+
+[tasks."init"]
+run = ["mise i", "yarn"]
+
+[tasks."start"]
+run = ["yarn dev"]
+
+[tasks."check"]
+run = ["grpc-health-probe -addr=:8080"]
+
+[tasks."container:build"]
+run = ["docker build . -f Dockerfile -t {{env._PROJECT_NAME}}:latest"]
+
+[tasks."container:run"]
+run = [
+  "docker run --rm --init --name {{env._PROJECT_NAME}} -p 127.0.0.1:8080:8080 {{env._PROJECT_NAME}}:latest",
+]
+
+[tasks."container:check"]
+run = [
+  "docker exec -it {{env._PROJECT_NAME}} /bin/grpc_health_probe -addr=:8080",
+]

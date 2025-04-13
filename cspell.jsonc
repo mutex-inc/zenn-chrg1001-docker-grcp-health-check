@@ -1,0 +1,27 @@
+{
+  "ignorePaths": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/gen/**",
+    "**/yarn.lock"
+  ],
+  "words": [
+    "biomejs",
+    "bufbuild",
+    "connectrpc",
+    "distroless",
+    "fastify",
+    "grcp",
+    "healthcheck",
+    "lefthook",
+    "nonroot",
+    "pipefail",
+    "prepush",
+    "proto",
+    "protobuf",
+    "protoc",
+    "tsup",
+    "yarnrc"
+  ]
+}

@@ -1,0 +1,8 @@
+*
+!mise.toml
+!package.json
+!yarn.lock
+!.yarnrc.yml
+!tsconfig*.json
+!tsup.config.*
+!src/**

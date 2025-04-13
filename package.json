@@ -1,0 +1,25 @@
+{
+  "name": "docker-grcp-health-check-example",
+  "scripts": {
+    "build": "npx tsup --config tsup.config.ts",
+    "buf:gen": "npx buf dep update && npx buf generate --template proto/buf.gen.yaml",
+    "biome:fix": "npx biome check . --fix",
+    "dev": "npx tsx --watch src/index.ts"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "2.2.5",
+    "@connectrpc/connect": "2.0.2",
+    "@connectrpc/connect-fastify": "2.0.2",
+    "@connectrpc/connect-node": "2.0.2",
+    "fastify": "5.2.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@bufbuild/buf": "1.52.1",
+    "@bufbuild/protoc-gen-es": "2.2.5",
+    "@types/node": "22.13.17",
+    "tsup": "8.4.0",
+    "tsx": "4.19.3",
+    "typescript": "5.8.2"
+  }
+}
