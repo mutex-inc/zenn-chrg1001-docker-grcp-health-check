@@ -10,33 +10,18 @@ import { Health } from "./gen/proto/grpc/health/v1/service_pb";
 
 const healthRoutes = (router: ConnectRouter) => {
   router.service(Health, {
-    check: (_, __) =>
-      create(CheckResponseSchema, {
+    check: (_, __) => {
+      console.info("check called");
+      return create(CheckResponseSchema, {
         status: ServingStatus.SERVING,
-      }),
+      });
+    },
   });
 };
 
 (async () => {
   const server = fastify({
     http2: true,
-    logger: {
-      serializers: {
-        res(res) {
-          return {
-            body: res.raw,
-          };
-        },
-        req(req) {
-          return {
-            url: req.url,
-            path: req.routeOptions.url,
-            parameters: req.params,
-            headers: req.headers,
-          };
-        },
-      },
-    },
   });
 
   await server.register(fastifyConnectPlugin, {
@@ -47,8 +32,6 @@ const healthRoutes = (router: ConnectRouter) => {
     host: "0.0.0.0",
     port: 8080,
   });
-
-  console.info("server is listening at", server.addresses());
 
   process.once("SIGINT", async () => {
     await server.close();
