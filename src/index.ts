@@ -11,7 +11,7 @@ import { Health } from "./gen/proto/grpc/health/v1/service_pb";
 const healthRoutes = (router: ConnectRouter) => {
   router.service(Health, {
     check: (_, __) => {
-      console.info("check called");
+      console.info(`${new Date().toISOString()} - Health check called`);
       return create(CheckResponseSchema, {
         status: ServingStatus.SERVING,
       });
