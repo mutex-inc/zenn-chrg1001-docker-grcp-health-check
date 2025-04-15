@@ -9,6 +9,7 @@ go = "latest"
 "npm:cspell" = "latest"
 
 [env]
+_.path = ['{{config_root}}/node_modules/.bin']
 _PROJECT_NAME = "docker-grcp-health-check-example"
 
 [settings]
