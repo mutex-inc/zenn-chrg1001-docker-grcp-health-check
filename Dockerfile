@@ -99,7 +99,7 @@ COPY --from=builder ${BUILDER_APP_DIR}/node_modules ./node_modules
 
 COPY --from=builder /bin/grpc_health_probe /bin/grpc_health_probe
 
-ENV SERVER_HOST=production
+ENV NODE_ENV=production
 ENV NODE_OPTS="--no-warnings --enable-source-maps"
 
 EXPOSE 8080
