@@ -31,6 +31,7 @@
         "noExcessiveCognitiveComplexity": "off"
       },
       "suspicious": {
+        "useAwait": "off",
         "noConsole": {
           "level": "warn",
           "options": {

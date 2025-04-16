@@ -2,20 +2,20 @@
 // @generated from file proto/grpc/health/v1/check.proto (package grpc.health.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
-import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv1";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv1";
+import { enumDesc, fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv1";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file proto/grpc/health/v1/check.proto.
  */
 export const file_proto_grpc_health_v1_check: GenFile = /*@__PURE__*/
-  fileDesc("CiBwcm90by9ncnBjL2hlYWx0aC92MS9jaGVjay5wcm90bxIOZ3JwYy5oZWFsdGgudjEiHwoMQ2hlY2tSZXF1ZXN0Eg8KB3NlcnZpY2UYASABKAkiPgoNQ2hlY2tSZXNwb25zZRItCgZzdGF0dXMYASABKA4yHS5ncnBjLmhlYWx0aC52MS5TZXJ2aW5nU3RhdHVzKmsKDVNlcnZpbmdTdGF0dXMSHgoaU0VSVklOR19TVEFUVVNfVU5TUEVDSUZJRUQQABIaChZTRVJWSU5HX1NUQVRVU19TRVJWSU5HEAESHgoaU0VSVklOR19TVEFUVVNfTk9UX1NFUlZJTkcQAkJ6ChJjb20uZ3JwYy5oZWFsdGgudjFCCkNoZWNrUHJvdG9QAaICA0dIWKoCDkdycGMuSGVhbHRoLlYxygIOR3JwY1xIZWFsdGhcVjHiAhpHcnBjXEhlYWx0aFxWMVxHUEJNZXRhZGF0YeoCEEdycGM6OkhlYWx0aDo6VjFiBnByb3RvMw");
+  fileDesc("CiBwcm90by9ncnBjL2hlYWx0aC92MS9jaGVjay5wcm90bxIOZ3JwYy5oZWFsdGgudjEiJQoSSGVhbHRoQ2hlY2tSZXF1ZXN0Eg8KB3NlcnZpY2UYASABKAkiqQEKE0hlYWx0aENoZWNrUmVzcG9uc2USQQoGc3RhdHVzGAEgASgOMjEuZ3JwYy5oZWFsdGgudjEuSGVhbHRoQ2hlY2tSZXNwb25zZS5TZXJ2aW5nU3RhdHVzIk8KDVNlcnZpbmdTdGF0dXMSCwoHVU5LTk9XThAAEgsKB1NFUlZJTkcQARIPCgtOT1RfU0VSVklORxACEhMKD1NFUlZJQ0VfVU5LTk9XThADMq4BCgZIZWFsdGgSUAoFQ2hlY2sSIi5ncnBjLmhlYWx0aC52MS5IZWFsdGhDaGVja1JlcXVlc3QaIy5ncnBjLmhlYWx0aC52MS5IZWFsdGhDaGVja1Jlc3BvbnNlElIKBVdhdGNoEiIuZ3JwYy5oZWFsdGgudjEuSGVhbHRoQ2hlY2tSZXF1ZXN0GiMuZ3JwYy5oZWFsdGgudjEuSGVhbHRoQ2hlY2tSZXNwb25zZTABQnoKEmNvbS5ncnBjLmhlYWx0aC52MUIKQ2hlY2tQcm90b1ABogIDR0hYqgIOR3JwYy5IZWFsdGguVjHKAg5HcnBjXEhlYWx0aFxWMeICGkdycGNcSGVhbHRoXFYxXEdQQk1ldGFkYXRh6gIQR3JwYzo6SGVhbHRoOjpWMWIGcHJvdG8z");
 
 /**
- * @generated from message grpc.health.v1.CheckRequest
+ * @generated from message grpc.health.v1.HealthCheckRequest
  */
-export type CheckRequest = Message<"grpc.health.v1.CheckRequest"> & {
+export type HealthCheckRequest = Message<"grpc.health.v1.HealthCheckRequest"> & {
   /**
    * @generated from field: string service = 1;
    */
@@ -23,52 +23,82 @@ export type CheckRequest = Message<"grpc.health.v1.CheckRequest"> & {
 };
 
 /**
- * Describes the message grpc.health.v1.CheckRequest.
- * Use `create(CheckRequestSchema)` to create a new message.
+ * Describes the message grpc.health.v1.HealthCheckRequest.
+ * Use `create(HealthCheckRequestSchema)` to create a new message.
  */
-export const CheckRequestSchema: GenMessage<CheckRequest> = /*@__PURE__*/
+export const HealthCheckRequestSchema: GenMessage<HealthCheckRequest> = /*@__PURE__*/
   messageDesc(file_proto_grpc_health_v1_check, 0);
 
 /**
- * @generated from message grpc.health.v1.CheckResponse
+ * @generated from message grpc.health.v1.HealthCheckResponse
  */
-export type CheckResponse = Message<"grpc.health.v1.CheckResponse"> & {
+export type HealthCheckResponse = Message<"grpc.health.v1.HealthCheckResponse"> & {
   /**
-   * @generated from field: grpc.health.v1.ServingStatus status = 1;
+   * @generated from field: grpc.health.v1.HealthCheckResponse.ServingStatus status = 1;
    */
-  status: ServingStatus;
+  status: HealthCheckResponse_ServingStatus;
 };
 
 /**
- * Describes the message grpc.health.v1.CheckResponse.
- * Use `create(CheckResponseSchema)` to create a new message.
+ * Describes the message grpc.health.v1.HealthCheckResponse.
+ * Use `create(HealthCheckResponseSchema)` to create a new message.
  */
-export const CheckResponseSchema: GenMessage<CheckResponse> = /*@__PURE__*/
+export const HealthCheckResponseSchema: GenMessage<HealthCheckResponse> = /*@__PURE__*/
   messageDesc(file_proto_grpc_health_v1_check, 1);
 
 /**
- * @generated from enum grpc.health.v1.ServingStatus
+ * @generated from enum grpc.health.v1.HealthCheckResponse.ServingStatus
  */
-export enum ServingStatus {
+export enum HealthCheckResponse_ServingStatus {
   /**
-   * @generated from enum value: SERVING_STATUS_UNSPECIFIED = 0;
+   * @generated from enum value: UNKNOWN = 0;
    */
-  UNSPECIFIED = 0,
+  UNKNOWN = 0,
 
   /**
-   * @generated from enum value: SERVING_STATUS_SERVING = 1;
+   * @generated from enum value: SERVING = 1;
    */
   SERVING = 1,
 
   /**
-   * @generated from enum value: SERVING_STATUS_NOT_SERVING = 2;
+   * @generated from enum value: NOT_SERVING = 2;
    */
   NOT_SERVING = 2,
+
+  /**
+   * Used only by the Watch method.
+   *
+   * @generated from enum value: SERVICE_UNKNOWN = 3;
+   */
+  SERVICE_UNKNOWN = 3,
 }
 
 /**
- * Describes the enum grpc.health.v1.ServingStatus.
+ * Describes the enum grpc.health.v1.HealthCheckResponse.ServingStatus.
  */
-export const ServingStatusSchema: GenEnum<ServingStatus> = /*@__PURE__*/
-  enumDesc(file_proto_grpc_health_v1_check, 0);
+export const HealthCheckResponse_ServingStatusSchema: GenEnum<HealthCheckResponse_ServingStatus> = /*@__PURE__*/
+  enumDesc(file_proto_grpc_health_v1_check, 1, 0);
+
+/**
+ * @generated from service grpc.health.v1.Health
+ */
+export const Health: GenService<{
+  /**
+   * @generated from rpc grpc.health.v1.Health.Check
+   */
+  check: {
+    methodKind: "unary";
+    input: typeof HealthCheckRequestSchema;
+    output: typeof HealthCheckResponseSchema;
+  },
+  /**
+   * @generated from rpc grpc.health.v1.Health.Watch
+   */
+  watch: {
+    methodKind: "server_streaming";
+    input: typeof HealthCheckRequestSchema;
+    output: typeof HealthCheckResponseSchema;
+  },
+}> = /*@__PURE__*/
+  serviceDesc(file_proto_grpc_health_v1_check, 0);
 

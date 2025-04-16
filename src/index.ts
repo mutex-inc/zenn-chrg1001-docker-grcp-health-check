@@ -3,18 +3,30 @@ import { fastifyConnectPlugin } from "@connectrpc/connect-fastify";
 import { create } from "@bufbuild/protobuf";
 import fastify from "fastify";
 import {
-  CheckResponseSchema,
-  ServingStatus,
+  Health,
+  HealthCheckResponseSchema,
+  HealthCheckResponse_ServingStatus,
 } from "./gen/proto/grpc/health/v1/check_pb";
-import { Health } from "./gen/proto/grpc/health/v1/service_pb";
 
 const healthRoutes = (router: ConnectRouter) => {
   router.service(Health, {
-    check: (_, __) => {
+    check: async (_, __) => {
       console.info(`${new Date().toISOString()} - Health check called`);
-      return create(CheckResponseSchema, {
-        status: ServingStatus.SERVING,
+      return create(HealthCheckResponseSchema, {
+        status: HealthCheckResponse_ServingStatus.SERVING,
       });
+    },
+    watch: async function* (_, __) {
+      console.info(`${new Date().toISOString()} - Health watch called`);
+      while (true) {
+        const response = create(HealthCheckResponseSchema, {
+          status: HealthCheckResponse_ServingStatus.SERVING,
+        });
+        yield response;
+
+        // ステータスチェックの間隔を設定
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      }
     },
   });
 };
