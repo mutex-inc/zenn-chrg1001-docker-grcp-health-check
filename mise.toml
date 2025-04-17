@@ -10,7 +10,7 @@ go = "latest"
 
 [env]
 _.path = ['{{config_root}}/node_modules/.bin']
-_PROJECT_NAME = "docker-grcp-health-check-example"
+_PROJECT_NAME = "docker-grpc-health-check-example"
 
 [settings]
 experimental = true

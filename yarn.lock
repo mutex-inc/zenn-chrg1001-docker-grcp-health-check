@@ -972,9 +972,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docker-grcp-health-check-example@workspace:.":
+"docker-grpc-health-check-example@workspace:.":
   version: 0.0.0-use.local
-  resolution: "docker-grcp-health-check-example@workspace:."
+  resolution: "docker-grpc-health-check-example@workspace:."
   dependencies:
     "@biomejs/biome": "npm:1.9.4"
     "@bufbuild/buf": "npm:1.52.1"

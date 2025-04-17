@@ -12,7 +12,6 @@
     "connectrpc",
     "distroless",
     "fastify",
-    "grcp",
     "healthcheck",
     "lefthook",
     "nonroot",

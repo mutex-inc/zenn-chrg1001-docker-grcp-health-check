@@ -1,5 +1,5 @@
 {
-  "name": "docker-grcp-health-check-example",
+  "name": "docker-grpc-health-check-example",
   "scripts": {
     "build": "npx tsup --config tsup.config.ts",
     "buf:gen": "npx buf dep update && npx buf generate --template proto/buf.gen.yaml",
