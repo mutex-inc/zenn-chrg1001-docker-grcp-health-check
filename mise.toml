@@ -36,3 +36,9 @@ run = [
 run = [
   "docker exec -it {{env._PROJECT_NAME}} /bin/grpc_health_probe -addr=:8080",
 ]
+
+[tasks."container:inspect:health"]
+run = ["docker inspect {{env._PROJECT_NAME}} | jq -C '.[].State.Health'"]
+
+[tasks."container:inspect:healthcheck"]
+run = ["docker inspect {{env._PROJECT_NAME}} | jq -C '.[].Config.Healthcheck'"]
