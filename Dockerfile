@@ -62,7 +62,7 @@ RUN \
 yarn install --immutable
 EOF
 
-# ビルド & 実行時に必要な依存関係のみを再インストール
+# ビルド
 RUN \
   --mount=type=bind,source=package.json,target=package.json \
   --mount=type=bind,source=yarn.lock,target=yarn.lock \
